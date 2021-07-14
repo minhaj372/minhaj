@@ -1,0 +1,158 @@
+.display-section {
+    background: $black url(../img/min.png);
+    background-attachment: fixed;
+    background-position: 50% 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $black;
+        opacity: .4;
+    }
+    &__content {
+       padding-top: 200px;
+       h1 {
+        letter-spacing: 8px;
+       }
+       &__word-change {
+           color: $white;
+           span {
+               opacity: .8;
+           }
+       }
+    }
+}
+// animated ball
+.animate-ball {
+    width: 24px;
+    height: 38px;
+    border: 1px solid $white;
+    border-radius: 12px;
+    position: relative;
+    &::after {
+        content: '';
+        width: 2px;
+        height: 8px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        background: #fff;
+    }
+    &::before {
+        content: '';
+    width: 2px;
+    height: 2px;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background: $primary;
+    -moz-animation-name: drip;
+    -webkit-animation-name: drip;
+    animation-name: drip;
+    -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    }
+}
+@keyframes drip {
+    to {
+      top: 30px;
+    }
+}
+// star
+.circle {
+    bottom: -50px;
+    right: 50px;
+    .icon {
+        animation: animate 25s linear infinite;
+        &:nth-child(1) {
+            font-size:1.6rem;
+            animation-delay: 0s;
+        }
+        &:nth-child(2) {
+            font-size:0.9rem;
+            animation-delay: 2s;
+            animation-duration: 12s;
+            color: $white;
+        }
+        &:nth-child(3) {
+            font-size:1.1rem;
+            animation-delay: 4s;
+        }
+        &:nth-child(4) {
+            font-size:1.3rem;
+            animation-delay: 0s;
+            animation-duration: 18s;
+            color: $yellow;
+        }
+        &:nth-child(5) {
+            font-size:1rem;
+            animation-delay: 0s;
+            color: $white;
+        }
+        &:nth-child(6) {
+            font-size:1.7rem;
+            animation-delay: 3s;
+            color: $yellow;
+        }
+        &:nth-child(7) {
+            font-size:1.9rem;
+            animation-delay: 7s;
+        }
+        &:nth-child(8) {
+            font-size:0.8rem;
+            animation-delay: 15s;
+            animation-duration: 45s;
+            color: $white;
+        }
+        &:nth-child(9) {
+            font-size:0.6rem;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        &:nth-child(10) {
+            font-size:1.4rem;
+            animation-delay: 0s;
+            animation-duration: 11s;
+            color: $yellow;
+        }
+    }
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}

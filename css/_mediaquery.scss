@@ -1,0 +1,11 @@
+@mixin for-max-575 {
+    @media (max-width: 575px) { @content; }
+  }
+  @mixin for-max-1399 {
+    @media (max-width: 1399px) { @content; }
+  }
+
+
+  @mixin for-min-768 {
+    @media (min-width: 768px) { @content; }
+  }

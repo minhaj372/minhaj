@@ -1,0 +1,16 @@
+.my-navbar {
+    &__nav {
+        li {
+            a {
+                color: $text-clr;
+                &.active {
+                    color: $primary;
+                }
+            }
+            margin-right: 32px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}

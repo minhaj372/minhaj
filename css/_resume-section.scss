@@ -1,0 +1,167 @@
+.resume-section {
+    padding: 100px 0;
+    @include for-max-575 {
+        padding:50px 0;
+      }
+    &__tabs {
+        li {
+            button {
+                background: $gray-black;
+                border: 1px solid $gray-black;
+                padding: 8px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                svg {
+                    fill: $white;
+                    margin-right: 8px;
+                }
+                &.active {
+                    background: $black;
+                }
+            }
+            &:last-of-type {
+                button {
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                }
+            }
+            &:first-of-type {
+                button {
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                }
+            }
+        }
+    }
+}
+.resume-content {
+    margin-top: 48px;
+    li {
+        width: 50%;
+        padding-bottom: 32px;
+        position: relative;
+        &:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 30px;
+            .resume-content__year {
+                left: -186px;
+                @include for-max-575 {
+                    left: -155px;
+                }
+                &::after {
+                    right: -33px;
+                    top: 0px;
+                }
+                &::before {
+                    right: -28px;
+                    top: 5px;
+                }
+            }
+            &::before {
+                content: '';
+                width: 2px;
+                height: 100%;
+                position: absolute;
+                left: -5px;
+                top: 2px;
+                background: $pink;
+                // @include for-max-1399 {
+                //     left: -2px;
+                // }
+            }
+        }
+        &:nth-child(even) {
+            text-align: right;
+            padding-right: 30px;
+            margin-left: -8px;
+            .resume-content__year {
+                right: -186px;
+                @include for-max-575 {
+                    right: -155px;
+                }
+                &::after {
+                    left: -33px;
+                    top: 0px;
+                }
+                &::before {
+                    left: -28px;
+                    top: 5px;
+                }
+            }
+            &::before {
+                content: '';
+                width: 2px;
+                height: 100%;
+                position: absolute;
+                right: -5px;
+                background: $pink;
+                // @include for-max-1399 {
+                //     right: -2px;
+                // }
+            }
+        }
+        &:last-of-type {
+            &::before {
+                display: none;
+            }
+            padding-bottom: 0;
+            
+        }
+    }
+    &__year {
+        width: 162px;
+        @include for-max-575 {
+            width: 130px;
+        }
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+        }
+        &::after {
+            width: 24px;
+            height: 24px;
+            border: 1px solid $pink;
+            background: $white;
+            border-radius: 50%;
+            z-index: 5;
+        }
+        &::before {
+            width: 14px;
+            height: 14px;
+            background: $pink;
+            border-radius: 50%;
+            z-index: 9;
+        }
+    }
+    &__top-icon {
+        margin-bottom: 50px;
+        &__border {
+            width: 48px;
+            height: 48px;
+            margin: auto;
+            border: 2px solid $pink;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: translate(12px, 0px);
+            &::after {
+                width: 2px;
+                height: 55px;
+                background: $pink;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 100%;
+                content: '';
+                z-index: -1;
+                
+            }
+        }
+    }
+}

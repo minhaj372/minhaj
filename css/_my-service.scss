@@ -1,0 +1,126 @@
+.my-service {
+    padding:0 0 100px 0;
+    @include for-max-575 {
+      padding:0 0 50px 0;
+    }
+
+.flip-boxes {
+    justify-content: center;
+  }
+  .flip-box {
+    display: flex;
+    align-content: stretch;
+    min-height: 250px;
+    flex-wrap: wrap;
+    position: relative;
+    border: 10px solid transparent;
+    padding:0;
+    border-top: 0;  
+    -webkit-perspective: 1000;
+            perspective: 1000;
+            &:nth-child(3) {
+                .front {
+                    background: url( https://img.freepik.com/free-vector/rocket-flying-through-astriods_1308-31144.jpg?size=626&ext=jpg)
+                }
+            }
+            &:nth-child(2) {
+                .front {
+                    background: url(https://d3n817fwly711g.cloudfront.net/uploads/2013/11/Responsive-design.jpg);
+                }
+            }
+            &:nth-child(1) {
+                .front {
+                    background: url(https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=830&q=80);
+                }
+            }
+            &:nth-child(4) {
+              .front {
+                  background: url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_588960966_354337.jpg);
+              }
+          }
+          &:nth-child(5) {
+            .front {
+                background: url(https://www.ingeniumweb.com/in/images/the-myth-of-clean-code-10-qualities-your-code-should-have/3750.png);
+            }
+        }
+        &:nth-child(6) {
+          .front {
+              background: url(https://www.digitalhrtech.com/wp-content/uploads/2020/01/Learning-and-development-1280x720.png);
+          }
+      }
+        
+       
+    &:hover {
+      .back {
+        transform: rotateY(0deg);
+        z-index: 10;
+      }
+      
+      .front {
+        transform: rotateY(180deg);
+        z-index: -1;
+      }
+      
+    }
+    
+    .back, .front {
+      position: relative;
+      background-color: #1b2d61;
+      color: white;
+      flex: 0 0 100%;
+      -webkit-transition: all 1s cubic-bezier(.5,1,.5,1);
+      transition: all 1s cubic-bezier(.5,1.3,.5,1.3);
+      transform-style: preserve-3d;
+      position: relative;
+      padding: 20px;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $black;
+        display: block;
+        position: absolute;
+        opacity: .5;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    
+    .back {
+      background-color: #cecece;
+      background: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80");
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+      transform: rotateY(-180deg);
+    
+    }
+    
+    .front {
+      z-index: 10;
+      background-size: cover !important;
+      background-position: center !important;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      .content {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      -webkit-transform: translateZ(50px);
+              transform: translateZ(50px);
+      text-shadow: 0px 0px 2px black;
+    
+    }
+  }
+}
