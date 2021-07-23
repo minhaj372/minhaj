@@ -1,4 +1,37 @@
 .my-navbar {
+    [aria-expanded="true"] {
+        .my-navbar__bar {
+            &:nth-of-type(3) {
+                display: none;
+            }
+            &:nth-of-type(1) {
+                transform: rotate(43deg);
+            }
+            &:nth-of-type(2) {
+                transform: rotate(-49deg);
+                margin-top: -6px;
+            }
+            width: 18px;
+        }
+    }
+    &__bar {
+        background: white;
+        height: 2px;
+        display: block;
+        margin-left: auto;
+        margin-bottom: 4px;
+        transition: all .3s ease-in;
+        &:first-of-type {
+            width: 18px;
+        }
+        &:nth-of-type(2) {
+            width: 14px;
+        }
+        &:nth-of-type(3){
+            width: 10px;
+            margin-bottom: 0;
+        }
+    }
     &__nav {
         li {
             a {
@@ -12,5 +45,17 @@
                 margin-right: 0;
             }
         }
+    }
+    &.active-nav {
+        background: $portfolio-ovarlay;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+    }
+}
+.navbar-toggler {
+    &:focus {
+        outline: none;
+        box-shadow: none;
     }
 }

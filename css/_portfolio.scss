@@ -7,6 +7,8 @@
         display: none;
     }
     &__image {
+        max-height: 450px;
+        overflow: hidden;
         &::after {
             content: '';
             width: 100%;
