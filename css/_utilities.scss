@@ -77,6 +77,9 @@ a {
 .bg-footer {
     background: $footer-bg;
 }
+.bg-nav {
+    background: $nav-ng;
+}
 // color
 .text-white {
     color: $white;
@@ -108,9 +111,16 @@ a {
 .opacity-90 {
     opacity: .9;
 }
+//border
+.pink-border {
+    border-color: $pink;
+}
 // border-radius 
 .br-20 {
     border-radius: 20px;
+}
+.br-25 {
+    border-radius: 25px;
 }
 .br-50 {
     border-radius: 50px;
@@ -155,4 +165,11 @@ a {
 // clip path
 .right-chervon-clip-path {
     clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0 46%, 0% 0%);
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+.visibility-visible {
+    visibility: visible;
 }

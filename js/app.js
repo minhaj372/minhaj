@@ -3,10 +3,13 @@ $(window).scroll(function() {
 
     if (scroll >= 500) {
         $(".my-navbar").addClass("active-nav");
+        $(".animate-ball").addClass("visibility-hidden");
+        
     } else {
-        $(".my-navbar").removeClass("active-nav");
+        $(".my-navbar").removeClass("visibility-hidden visibility-visible");
     }
 });
+
 // word change
 (function(){
     var words = [
@@ -47,7 +50,7 @@ $(function () {
         e.preventDefault();
         $(".portfolio__cols:hidden").slice(0, 3).slideDown();
         if ($(".portfolio__cols:hidden").length == 0) {
-            $("#loadMore").text("No Content").addClass("noContent");
+            $("#loadMore").text("No more").addClass("noContent");
         }
         $('html,body').animate({
             scrollTop: $(this).offset().top
